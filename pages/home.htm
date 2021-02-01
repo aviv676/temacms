@@ -1,0 +1,99 @@
+title = "Hello"
+url = "/"
+layout = "default"
+is_hidden = 0
+==
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+<style>
+.a{
+    text-shadow: 2px 2px #000000;
+    color: #FF0E03;
+}
+.b{
+     text-shadow: 2px 2px #000000;
+    color: #FFFB03;
+}
+.c{
+     text-shadow: 2px 2px #000000;
+    color: #48FF03;
+}
+.d{
+     text-shadow: 2px 2px #000000;
+    color: #03FFEC;
+}
+.e{
+     text-shadow: 2px 2px #000000;
+    color: #031EFF;
+}
+.f{
+     text-shadow: 2px 2px #000000;
+    color: #03FF8C;
+}
+.g{
+     text-shadow: 2px 2px #000000;
+    color: #D903FF;
+}
+.h{
+     text-shadow: 2px 2px #000000;
+    color: #FF03F4;
+}
+.i{
+     text-shadow: 2px 2px #000000;
+    color: #FF0385;
+}
+/*body {
+       background: -webkit-linear-gradient(bottom, #0376FF, #03F4FF);
+       background-repeat: no-repeat;
+}*/
+</style>
+</head>
+<body>
+<div class="container">
+    <div id="homeGreetings" class="home-greetings">
+        <h1 class="a">Aku Cinta Kamu (Indonesia)</h1>
+        <h1 class="b">I love You (Inggris)</h1>
+        <h1 class="c">Ti Amo (Italia)</h1>
+        <h1 class="d">Kocham Cię (Polski)</h1>
+        <h1 class="e">Ich Liebe Dich (Jerman)</h1>
+        <h1 class="f">Я люблю вас (Rusia)</h1>
+        <h1 class="g">Ik Hou Van Je (Belanda)</h1>
+        <h1 class="h">사랑해 (Korea)</h1>
+        <h1 class="i">Te Amo (Spanyol)</h1>
+        <h1 class="a">jag älskar dig (Swedia)</h1>
+        <h1 class="b">我爱你 (China)</h1>
+        <h1 class="c">Mahal Kita (Tagalog)</h1>
+        <h1 class="d">ฉันรักคุณ (Thailand)</h1>
+        <h1 class="e">Seni Seviyorum (Turki)</h1>
+        <h1 class="f">Tôi Mến Bạn (Vietnam)</h1>
+        <h1 class="g">मैं तुमसे प्यार करता हूँ (Hindi)</h1>
+        <h1 class="h">Je T'aime (Prancis)</h1>
+    </div>
+</div>
+</body>
+</html>
+
+{% put scripts %}
+    <script>
+        function swap() {
+            $('#homeGreetings h1:visible').each(function(){
+                $(this).fadeOut(500);
+                if ($(this).next().length > 0) $(this).next().fadeIn(1000);
+                else $('#homeGreetings h1:first').fadeIn(1000)
+            });
+        }
+
+        $('#homeGreetings')
+            .find('h1:not(:first)')
+            .hide()
+            .end()
+            .addClass('is-loaded');
+
+        setTimeout(function() {
+            setInterval(swap, 2000);
+        }, 1000)
+
+    </script>
+        {% endput %}

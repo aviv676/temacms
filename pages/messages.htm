@@ -1,0 +1,77 @@
+title = "Messages"
+meta_title = "title.messages"
+url = "/messages"
+layout = "default"
+==
+<?php
+function onStart()
+{
+    $this['messages'] = RainLab\Translate\Models\Message::all();
+}
+?>
+==
+<div class="container">
+
+    <div class="title-area">
+        <h3>{{ this.page.meta_title|_ }}</h3>
+    </div>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+
+<table>
+  <tr>
+    <th>Indonesia</th>
+    <th>Inggris</th>
+  </tr>
+  <tr>
+    <td>Apa Kabar</td>
+    <td>How Are You</td>
+  </tr>
+  <tr>
+    <td>Siapa Namamu</td>
+    <td>What Is Your Name</td>
+  </tr>
+  <tr>
+    <td>Namaku "bot"</td>
+    <td>My Name Is "bot"</td>
+  </tr>
+  <tr>
+    <td>Kamu Tinggal Dimana</td>
+    <td>Where Do You Live</td>
+  </tr>
+  <tr>
+    <td>Kamu Asal Mana</td>
+    <td>Where Do You Coome From</td>
+  </tr>
+  <tr>
+    <td>Rumahmu Dimana</td>
+    <td>Where IS Your House</td>
+  </tr>
+</table>
+
+</body>
+</body>
+</html>
